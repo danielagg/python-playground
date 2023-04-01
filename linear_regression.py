@@ -1,10 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("Results.csv")
 
-# plt.scatter(data.x, data.y)
-# plt.show()
+plt.scatter(data.Diff, data.DocumentType)
+# plt.xticks(rotation=45)
+plt.show()
 
 # we want to minimize this:
 def loss_function(w, b, points):
