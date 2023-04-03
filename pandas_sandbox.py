@@ -49,3 +49,8 @@ print(data3.iloc[0:2])  # same as .head(2), rows 0, 1
 print(data3.loc[:, ["attempts"]])  # all rows, 'attempts' column
 print(data3["attempts"])  # all rows, 'attempts' column
 print(data3[["name", "attempts"]])  # all rows, two columns --> now we do need [[]]
+
+
+# only include two columns when reading
+df2 = pd.read_csv("data_2.csv", usecols=["x1", "x2", "x3"])
+print(df2)
