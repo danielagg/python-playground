@@ -53,4 +53,6 @@ print(data3[["name", "attempts"]])  # all rows, two columns --> now we do need [
 
 # only include two columns when reading
 df2 = pd.read_csv("data_2.csv", usecols=["x1", "x2", "x3"])
+df2 = df2.dropna(subset=["x2", "x3"])
+df2 = df2.drop_duplicates()  # subset works here too
 print(df2)
