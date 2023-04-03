@@ -31,14 +31,21 @@ exam_data = {
 labels = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 data3 = pd.DataFrame(exam_data, labels)
 
-print(data3.loc[:, ["attempts", "name", "qualify", "score"]])
+print(data3.iloc[0:2, [0, 2]])  # rows 0th and 1st, with 0th and 2nd column
+print(
+    data3.loc["a":"c", ["name", "attempts"]]
+)  # rows a, b, c (based on label) and columns "name", "attempts"
 
-# select rows 0:2, as in 0th and 1st, and columns 0, 1, 2
-print(data3.iloc[0:2, [0, 1, 2]])
+
+print(
+    data3.loc[:, ["attempts", "name", "qualify", "score"]]
+)  # all rows, these 4 columns
+
+# iloc vs loc --> with iLoc, params are index/numeric. --> loc uses the column's names for all
 
 print(data3.iloc[0:2])  # same as .head(2), rows 0, 1
 
 
 print(data3.loc[:, ["attempts"]])  # all rows, 'attempts' column
 print(data3["attempts"])  # all rows, 'attempts' column
-print(data3[["name", "attempts"]])  # all rows, two columns --> now we do neet [[]]
+print(data3[["name", "attempts"]])  # all rows, two columns --> now we do need [[]]
