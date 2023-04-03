@@ -30,6 +30,15 @@ exam_data = {
 
 labels = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 data3 = pd.DataFrame(exam_data, labels)
-data3 = data3.loc[:, ["attempts", "name", "qualify", "score"]]
 
-print(data3)
+print(data3.loc[:, ["attempts", "name", "qualify", "score"]])
+
+# select rows 0:2, as in 0th and 1st, and columns 0, 1, 2
+print(data3.iloc[0:2, [0, 1, 2]])
+
+print(data3.iloc[0:2])  # same as .head(2), rows 0, 1
+
+
+print(data3.loc[:, ["attempts"]])  # all rows, 'attempts' column
+print(data3["attempts"])  # all rows, 'attempts' column
+print(data3[["name", "attempts"]])  # all rows, two columns --> now we do neet [[]]
